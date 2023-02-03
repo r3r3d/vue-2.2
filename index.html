@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+    <form class="review-form" @submit.prevent="onSubmit">
+        <p v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+        <ul>
+            <li v-for="error in errors">{{ error }}</li>
+        </ul>
+        </p>
+        <p>
+            <label for="name">Name:</label>
+            <input id="name" v-model="name" placeholder="name" required>
+        </p>
+        <p>
+            <label for="review">Review:</label>
+            <textarea id="review" v-model="review"></textarea>
+        </p>
+
+        <p>
+            <label for="rating">Rating:</label>
+            <select id="rating" v-model.number="rating">
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+            </select>
+
+            <input type="radio" id="yes" value="Recommend" v-model="recommend" class="button">
+            <label for="yes">Recommend</label>
+            <input type="radio" id="no" value=" Not recommend" v-model="recommend" class="button">
+            <label for="no">Not recommend</label>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+</div>
+</body>
+</html>
