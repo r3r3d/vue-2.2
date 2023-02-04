@@ -120,3 +120,23 @@ body {
     padding: 15px;
     overflow: auto;
 }
+.block{
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+    width: auto;
+    margin-left: 300px;
+    margin-right: 100px;
+}
+.blockOne{
+    background-color: orange;
+    margin: 10px;
+}
+.blockTwo{
+    background-color: greenyellow;
+    margin: 10px;
+}
+.blockTree{
+    background-color: yellow;
+    margin: 10px;
+}

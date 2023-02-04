@@ -3,12 +3,14 @@ let app = new Vue({
     el: '#app',
     data: {
         tasks: [],
+        tasks2:[],
         task1:null,
         task2:null,
         task3:null,
         task4:null,
         task5:null,
-        name:null
+        name:null,
+        toggle1:true,
 
 
 
@@ -35,7 +37,10 @@ let app = new Vue({
         },
         mounted() {
             eventBus.$on('task-submitted', taskRecon => {
-                this.tasks.push(taskRecon)
+                    this.tasks.push(taskRecon)
             })
-    }
+    },
+
+
 })
+
