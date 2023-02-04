@@ -1,16 +1,24 @@
-const app = new Vue({
+let eventBus = new Vue()
+let app = new Vue({
     el: '#app',
     data: {
-        name: ''
+        task: [],
+        task1:null
     },
-    mounted() {
-        if (localStorage.name) {
-            this.name = localStorage.name;
-        }
-    },
-    watch: {
-        name(newName) {
-            localStorage.name = newName;
-        }
+    methods: {
+
+        onSubmit() {
+            if(this.task1){
+                let taskRecon = {
+                    task:this.task1
+                }
+                eventBus.$emit('task-submitted', taskRecon)
+                this.task1 = null
+            }
+        }},
+        mounted() {
+            eventBus.$on('task-submitted', taskRecon => {
+                this.task.push(taskRecon)
+            })
     }
-});
+})
