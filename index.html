@@ -20,25 +20,30 @@
                 <div class="modal-body">
                     <form class="review-form" @submit.prevent="onSubmit">
                         <p>
+                            <label for="name">Название</label>
+                            <input id="name" v-model="name"required>
+                        </p>
+                        <p>
                             <label for="task1">Задача1:</label>
                             <input id="task1" v-model="task1"required>
                         </p>
-<!--                        <p>-->
-<!--                            <label for="task2">Задача2:</label>-->
-<!--                            <input id="task2" v-model="task2"required>-->
-<!--                        </p>-->
-<!--                        <p>-->
-<!--                            <label for="task3">Задача3:</label>-->
-<!--                            <input id="task3" v-model="task3"required>-->
-<!--                        </p>-->
-<!--                        <p>-->
-<!--                            <label for="task4">Задача4:</label>-->
-<!--                            <input id="task4" v-model="task4"required>-->
-<!--                        </p>-->
-<!--                        <p>-->
-<!--                            <label for="task5">Задача5:</label>-->
-<!--                            <input id="task5" v-model="task5"required>-->
-<!--                        </p>-->
+                        <p>
+                            <label for="task2">Задача2:</label>
+                            <input id="task2" v-model="task2"required>
+                        </p>
+                        <p>
+                            <label for="task3">Задача3:</label>
+                            <input id="task3" v-model="task3"required>
+                        </p>
+                        <p>
+                            <label for="task4">Задача4:</label>
+                            <input id="task4" v-model="task4"required>
+                        </p>
+                        <p>
+                            <label for="task5">Задача4:</label>
+                            <input id="task5" v-model="task5"required>
+                        </p>
+                        <p>
                         <p>
                             <input type="submit" value="Сохранить" >
                         </p>
@@ -47,12 +52,17 @@
             </div>
         </div>
     </div>
-    <div class="block1">
-    <ul>
-        <li v-for="task in task">{{ task }}</li>
+    <p v-if="!tasks.length">There are no  yet.</p>
+    <ul v-else>
+        <li v-for="task in tasks">
+            <p><b>{{ task.name }}</b></p>
+            <p>{{ task.task1 }}</p>
+            <p>{{ task.task2 }}</p>
+            <p>{{ task.task3 }}</p>
+            <p>{{ task.task4 }}</p>
+            <p>{{ task.task5 }}</p>
+            </li>
     </ul>
-    </div>
-
 </div>
 </body>
 </html>

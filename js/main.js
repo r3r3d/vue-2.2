@@ -2,23 +2,40 @@ let eventBus = new Vue()
 let app = new Vue({
     el: '#app',
     data: {
-        task: [],
-        task1:null
+        tasks: [],
+        task1:null,
+        task2:null,
+        task3:null,
+        task4:null,
+        task5:null,
+        name:null
+
+
+
     },
     methods: {
 
         onSubmit() {
-            if(this.task1){
-                let taskRecon = {
-                    task:this.task1
-                }
-                eventBus.$emit('task-submitted', taskRecon)
-                this.task1 = null
+           let taskRecon = {
+               name: this.name,
+               task1: this.task1,
+               task2: this.task2,
+               task3: this.task3,
+               task4: this.task4,
+               task5: this.task5,
+           }
+           eventBus.$emit('task-submitted', taskRecon)
+            this.name = null
+            this.task1 = null
+            this.task2 = null
+            this.task3 = null
+            this.task4 = null
+            this.task5 = null
             }
-        }},
+        },
         mounted() {
             eventBus.$on('task-submitted', taskRecon => {
-                this.task.push(taskRecon)
+                this.tasks.push(taskRecon)
             })
     }
 })
