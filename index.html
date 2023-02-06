@@ -18,80 +18,19 @@
                     <a href="#close" title="Close" class="close">×</a>
                 </div>
                 <div class="modal-body">
-                    <form class="review-form" @submit.prevent="onSubmit">
-                        <p>
-                            <label for="name">Название</label>
-                            <input id="name" v-model="name"required>
-                        </p>
-                        <p>
-                            <label for="task1">Задача1:</label>
-                            <input id="task1" v-model="task1"required>
-                        </p>
-                        <p>
-                            <label for="task2">Задача2:</label>
-                            <input id="task2" v-model="task2"required>
-                        </p>
-                        <p>
-                            <label for="task3">Задача3:</label>
-                            <input id="task3" v-model="task3"required>
-                        </p>
-                        <p>
-                            <label for="task4">Задача4:</label>
-                            <input id="task4" v-model="task4"required>
-                        </p>
-                        <p>
-                            <label for="task5">Задача5:</label>
-                            <input id="task5" v-model="task5"required>
-                        </p>
-                        <p>
-                        <p>
-                            <input type="submit" value="Сохранить" >
-                        </p>
-                    </form>
+                    <cart-create></cart-create>
                 </div>
             </div>
         </div>
     </div>
     <div class="block">
     <div class="blockOne">
-    <p v-if="!tasks.length">There are no  yet.</p>
-    <ul v-else>
-        <li v-for="task in tasks">
-            <p><b>{{ task.name }}</b></p>
-<!--            <p v-show='toggle1'>{{ task.task1 }} <button @click ='toggle1 = !toggle1'>Скрыть</button></p>-->
-            <p>{{ task.task1 }}</p>
-            <p>{{ task.task2 }}</p>
-            <p>{{ task.task3 }}</p>
-            <p>{{ task.task4 }}</p>
-            <p>{{ task.task5 }}</p>
-            </li>
-    </ul>
+        <h2>Заметка 1</h2>
+        <task-up></task-up>
     </div>
         <div class="blockTwo">
-            <p v-if="!tasks2.length">There are no  yet.</p>
-            <ul v-else>
-                <li v-for="taskT in tasks2">
-                    <p><b>{{ taskT.name }}</b></p>
-                    <p>{{ taskT.task1 }}</p>
-                    <p>{{ taskT.task2 }}</p>
-                    <p>{{ taskT.task3 }}</p>
-                    <p>{{ taskT.task4 }}</p>
-                    <p>{{ taskT.task5 }}</p>
-                </li>
-            </ul>
         </div>
     <div class="blockTree">
-        <p v-if="!tasks.length">There are no  yet.</p>
-        <ul v-else>
-            <li v-for="task in tasks">
-                <p><b>{{ task.name }}</b></p>
-                <p>{{ task.task1 }}</p>
-                <p>{{ task.task2 }}</p>
-                <p>{{ task.task3 }}</p>
-                <p>{{ task.task4 }}</p>
-                <p>{{ task.task5 }}</p>
-            </li>
-        </ul>
     </div>
 </div>
 </div>
