@@ -2,37 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Карточки</title>
-    <script defer src="js/vue.js"></script>
-    <script defer src="js/main.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Title</title>
+    <script defer src="./js/vue.js"></script>
+    <script defer src="./js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div id="app">
-    <a href="#openModal">Создать карточку</a>
-    <div id="openModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Карточка</h3>
-                    <a href="#close" title="Close" class="close">×</a>
-                </div>
-                <div class="modal-body">
-                    <cart-create></cart-create>
-                </div>
-            </div>
-        </div>
+    <div id="app">
+        <first-list :data="data"></first-list>
     </div>
-    <div class="block">
-    <div class="blockOne">
-        <h2>Заметка 1</h2>
-        <task-up></task-up>
-    </div>
-        <div class="blockTwo">
-        </div>
-    <div class="blockTree">
-    </div>
-</div>
-</div>
 </body>
 </html>
